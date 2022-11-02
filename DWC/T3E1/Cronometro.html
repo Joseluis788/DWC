@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <style>
+        .contenedor{
+            margin: 10px auto;
+            width: 540px;
+            height: 115px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contedero">
+        <div id="horas">00</div>
+        <div id="minutos">:00</div>
+        <div id="segundos">:00</div>
+        <div id="centesimas">:00</div>
+        <input type="button" class="boton" id="inicio" onclick="inicio()" value="Start">
+        <input type="button" class="boton" id="resetear" onclick="reset()" value="Reset">
+    </div>
+    <script>
+        var centesimas = 0;
+        var segundos = 0;
+        var minutos = 0;
+        var horas = 0;
+        var centesimasHTML = document.getElementById("centesimas");
+        var segundosHTML = document.getElementById("segundos");
+        var minutosHTML = document.getElementById("minutos");
+        var horasHTML = document.getElementById("horas");
+        function inicio() {
+            control = setInterval(cronometro, 10);
+        }
+
+        function cronometro() {
+            if (centesimas < 99)
+            {
+                centesimas++;
+            if (centesimas < 10)
+                centesimas = "0" + centesimas;
+            centesimasHTML.innerHTML = ":" + centesimas;
+            }
+            if (centesimas == 99)
+                centesimas = -1;
+
+            if (centesimas == 0)
+            {
+                segundos++;
+                if (segundos < 10)
+                    segundos = "0" + segundos;
+                
+                segundosHTML.innerHTML = ":"+segundos;
+            }
+            if (segundos == 59)
+                segundos = -1;
+            if ( (centesimas == 0) && (segundos == 0) )
+            {
+                minutos++;
+                if (minutos < 10)
+                    minutos = "0"+minutos;
+                minutosHTML.innerHTML = ":"+minutos;
+            }
+            if (minutos == 59)
+                minutos = -1;
+            if ( (centesimas == 0) && (segundos == 0) && (minutos == 0))
+            {
+                horas++;
+                if (horas <10)
+                horas = "0"+horas;
+                horasHTML.innerHTML = horas;
+            }
+
+            
+        }
+    </script>
+</body>
+</html>
