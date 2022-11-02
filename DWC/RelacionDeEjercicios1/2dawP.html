@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Haz un programa que escriba todos los múltiplos de 23 inferiores a 1000 y por
+    último nos dé la suma de todos ellos.Graba el programa con el nombre 2dawP.htm
+    en TuCarpeta-->
+    <script>
+
+        var multiplos23 = "";
+        var suma = 0;
+
+        for (var i = 1; i <= 1000; i++)
+        {
+            if (i%23 == 0)
+            {
+                multiplos23 = multiplos23 + i + ", ";
+                suma += i;
+            }
+        }
+
+        alert("Los multiplos de 23 son: " + multiplos23 + "\nLa suma de todos los números es: " + suma);
+
+    </script>
+</body>
+</html>

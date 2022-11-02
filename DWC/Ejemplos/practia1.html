@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder = "Introduce la longitud" id="longitud">
+    <button type="button" id="boton">Dale</button>
+
+    <script>
+        var boton = document.getElementById("boton");
+        boton.addEventListener("click", rombo, false);
+
+        function rombo ()
+        {
+            var longitud = document.getElementById("longitud").value
+
+            for (var i = 0; i < longitud; i++)
+            {
+                for (var j = longitud; j > i; j--)
+                {
+                    document.write("&nbsp");
+                }
+                for (var h = 0; h < i; h++)
+                {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+
+            for (var i = longitud; i > 0; i--)
+            {
+                for (var j = longitud; j > i; j--)
+                {
+                    document.write("&nbsp");
+                }
+                for (var h = 0; h < i; h++)
+                {
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+
+    </script>
+</body>
+</html>

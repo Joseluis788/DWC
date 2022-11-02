@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Haz un programa de nombre 2dawD.htm, que has de grabar en TuCarpeta, que
+    funcione de la siguiente forma:
+    - El programa nos pide un número.
+    - El programa nos muestra en una única pantalla (un único “alert”), el doble, el triple
+    y cuadrúple del número que habíamos introducido.-->
+    <input id="numero"> Introduce un número </input>
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <script>
+        function calcular()
+        {
+            var doble, triple, cuadruple;
+            doble = document.getElementById("numero").value * 2;
+            triple = document.getElementById("numero").value * 3;
+            cuadruple = document.getElementById("numero").value * 4;
+
+            let respuesta = "El doble del número es: " + doble +
+                            "\nEl triple del número es: " + triple +
+                            "\nEl cuadruple del número es: " + cuadruple;
+
+            alert(respuesta);
+        }
+    </script>
+    
+</body>
+</html>

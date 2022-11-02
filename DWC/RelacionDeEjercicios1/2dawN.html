@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Haz un programa que haga lo mismo que el anterior, pero además nos dé la suma
+    de todos los números introducidos, exceptuando el 9999Graba el programa con el
+    nombre 2dawN.htm en TuCarpeta.-->
+    <script>
+        
+        var terminar = false;
+        var numero;
+        var contador = 0;
+        var suma = 0;
+
+        while (terminar == false)
+        {
+            numero = prompt("Introduce un número, 9999 para acabar");
+
+            if (numero == 9999)
+                terminar = true;
+            else if (numero != "")
+            {
+                contador++;
+                suma += Number(numero);
+            }
+               
+        }
+
+        alert("Ha escrito un total de " + contador + " números\nLa suma total es: " + suma);
+
+    </script>
+</body>
+</html>
