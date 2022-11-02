@@ -7,7 +7,6 @@
     <title>Cronómetro</title>
     <style>
         .contenedor{
-            margin: 10px auto;
             width: 540px;
             height: 115px;
         }
@@ -15,7 +14,7 @@
 </head>
 <body>
 
-    <div class="contedero">
+    <div class="contenedor">
         <div id="horas">00</div>
         <div id="minutos">:00</div>
         <div id="segundos">:00</div>
@@ -28,16 +27,36 @@
         var segundos = 0;
         var minutos = 0;
         var horas = 0;
+        var salir = false
         var centesimasHTML = document.getElementById("centesimas");
         var segundosHTML = document.getElementById("segundos");
         var minutosHTML = document.getElementById("minutos");
         var horasHTML = document.getElementById("horas");
+
         function inicio() {
+            salir = false;
             control = setInterval(cronometro, 10);
         }
 
+        function reset()
+        {
+            centesimas = 0;
+            segundos = 0;
+            minutos = 0;
+            horas = 0;
+            centesimasHTML.innerHTML = ":" + centesimas + 0;
+            segundosHTML.innerHTML = ":" + segundos+ 0;
+            minutosHTML.innerHTML = ":" + minutos+ 0;
+            horasHTML.innerHTML = horas + "0";
+
+            clearInterval(control);
+            salir = true;
+        }
+
         function cronometro() {
-            if (centesimas < 99)
+            if (salir == false)
+            {
+                if (centesimas < 99)
             {
                 centesimas++;
             if (centesimas < 10)
@@ -73,8 +92,7 @@
                 horas = "0"+horas;
                 horasHTML.innerHTML = horas;
             }
-
-            
+            }
         }
     </script>
 </body>
