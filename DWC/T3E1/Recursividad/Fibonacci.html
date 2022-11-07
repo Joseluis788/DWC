@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibonacci (num)
+        {
+            if (num <= 1)
+                return num;
+
+            return fibonacci (num-1) + fibonacci (num-2);
+        }
+        var numero = fibonacci (8);
+        document.write(numero);
+    </script>
+</body>
+</html>
