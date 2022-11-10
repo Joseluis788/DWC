@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23.4</title>
+</head>
+<body>
+    <script>
+        var palabra = prompt("Introduce una palabra");
+
+        var palabraPartida = palabra.split("");
+        var palabraAlReves = palabraPartida.reverse();
+        var palabraBuena = palabraAlReves.join("");
+
+        if (palabra == palabraBuena)
+            alert("La palabra introducida es palíndroma");
+        else
+            alert("La palabra introducida no es palíndroma");
+    </script>
+</body>
+</html>

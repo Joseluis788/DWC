@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23.1</title>
+</head>
+<body>
+    <script>
+        var fin = false;
+        var cadena = "";
+        var palabra;
+        while (fin == false)
+        {
+            palabra = prompt("Introduce un nombre o Fin para terminar");
+            if (palabra == "Fin")
+                fin = true;
+            else
+                cadena = cadena + palabra + ", ";
+        }
+
+        alert(cadena);
+    </script>
+</body>
+</html>
