@@ -3,7 +3,7 @@ let arrayNumerosFake;
 
 for (let i = 0; i <= 9999; i++)
 {
-    arrayNumerosFake = arrayNumeros;
+    arrayNumerosFake = [...arrayNumeros];
     arrayNumeros.sort();
     console.log("ordenado"+arrayNumeros);
     console.log("desordenado"+arrayNumerosFake);
