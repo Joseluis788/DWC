@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matriculas</title>
     <script src="Matriculas.js"></script>
+    <link rel="stylesheet" href="Matriculas.css">
 </head>
-<body>
-    <p id="DoblePareja"></p>
-    <p id="Trio"></p>
-    <p id="EscaleraSimple"></p>
-    <p id="EscaleraCompleta"></p>
-    <p id="Poker"></p>
+<body onload="apartado1()">
+    <div class="superContenedor">
+        <div class="contenedor">
+            <h1>Apartado 1</h1>
+            <br><br>
+            <p id="DoblePareja"></p>
+            <p id="Trio"></p>
+            <p id="EscaleraSimple"></p>
+            <p id="EscaleraCompleta"></p>
+            <p id="Poker"></p>
+        </div>
+    </div>
+    <br>
+    <div class="superContenedor">
+        <div class="contenedor">
+            <h1>Apartado 2</h1>
+            <br><br>
+            <p>Introduce un número de 4 dígitos</p>
+            <input type="number" id="numero"><button onclick="apartado2()">Introducir</button>
+            <br>
+            <p id="figura">Tu figura es: </p>
+        </div>
+    </div>
 </body>
 </html>
