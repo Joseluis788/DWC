@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 35</title>
+    <script>
+        function mailAleatorio()
+        {
+        let num = parseInt(Math.random()*3);
+        let ventana = window.open("", "");
+
+        if(num == 0)
+            ventana.location='http://www.hotmail.com';
+        else if (num == 1)
+            ventana.location='https://www.google.com/intl/es/gmail/about/';
+        else
+            ventana.location='https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_33bd44fa-d6ca-46db-95b6-18350a1661ea';
+        }
+
+    </script>
+</head>
+<body>
+    <a href="#" onclick="mailAleatorio()">Click aqui</a>
+</body>
+</html>
