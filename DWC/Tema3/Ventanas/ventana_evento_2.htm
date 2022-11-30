@@ -7,14 +7,90 @@
 
          var parametros = "width=400, height=300, left=200, top=150 resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
 
+         let ventanaNueva;
+
+
+
          function abrirVentana()
          {
-            window.open ("texto_de_secundaria_2.htm", "ventana", parametros);
+            ventanaNueva = window.open ("texto_de_secundaria_2.htm", "ventana", parametros);
          }
-      
+         
+         function cerrarVentana()
+         {
+            ventanaNueva.close();
+         }
       </script>
+      <style>
+         .botonFocus:focus{
+            background-color: red;
+         }
+         .botonBlur{
+            filter: blur(1px);
+         }
+      </style>
    </head>
    <body>
+      <h1>Ventanas</h1>
+      <div id="divCerrarVentanas">
+         1.- Botón cerrar ventana <br> 
+         <button onclick="cerrarVentana()">Cerrar ventana</button>
+      </div>
+      <br><br><br>
+      <div id="divCoordenadas">
+         <div>2.- Escriba las coordenadas para la nueva ventana</div>
+         <div>
+            <input type="number" placeholder="Coordenada Y" id="y"> <input type="number" placeholder="Coordenada X" id="x">
+            <button id="botonCoordenadas">Aplicar</button>
+         </div>
+      </div>
+      <br><br><br>
+      <div id="divOption">
+         <div>3.- Selecciona el color de la nueva ventana</div>
+         <div>
+            <select id="colores">
+               <option value="blue">Azul</option>
+               <option value="yellow">Amarillo</option>
+               <option value="purple">Morado</option>
+            </select>
+            <button id="botonColores">Aplicar</button>
+         </div>
+      </div>
+      <br><br><br>
+      <div id="divBlurYFocus">
+         <div>4.- Botones blur y focus</div>
+         <div><button class="botonBlur">Blur</button> <button class="botonFocus">Focus</button></div>
+      </div>
+      <br><br><br>
+      <div>
+         <div>5.- Introduce el tiempo que quieres que esté activa la ventana en segundos</div>
+         <div><input type="number" placeholder="Tiempo" id="tiempoCerrar"> <button id="botonTiempo">Aplicar</button></div>
+      </div>
+      <br><br><br>
+      <div>
+         <div>6.- Texto que quieres que aparezca en la ventana</div>
+         <div><input type="text" placeholder="Texto" id="textoVentana"> <button id="botonTiempo">Aplicar</button></div>
+      </div>
+      <br><br><br>
+      <div>
+         <div>7.- Tamaño y color del texto</div>
+         <br>
+         <div>Tamaño</div>
+         <div><input type="number" placeholder="Altura" id="inputHeight"></div>
+         <div><input type="number" placeholder="Anchura" id="inputWeigth"></div>
+         <div><button id="botonTamaño">Aplicar</button></div>
+         <br>
+         <div>Color</div>
+         <div>
+            <select id="colores2">
+               <option value="red">Rojo</option>
+               <option value="blue">Azul</option>
+               <option value="pink">Rosa</option>
+            </select>
+            <div><button id="botonTamaño">Aplicar</button></div>
+         </div>
+      </div>
+      <br><br><br>
       <button onClick="abrirVentana();">
          Pulse.
       </button>
