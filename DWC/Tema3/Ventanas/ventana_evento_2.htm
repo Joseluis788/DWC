@@ -5,26 +5,115 @@
       </title>
       <script language="javascript">
 
-         var parametros = "width=400, height=300, left=200, top=150 resizable=no, menubar=no, toolbar=no, directories=no, location=no, scrollbars=no, status=no";
+         let conf = {
+            width:"400", 
+            height:"300", 
+            left:"", 
+            top:"", 
+            tiempo: null,
+            texto: null,
+            color: null
+         }
 
          let ventanaNueva;
 
-
-
          function abrirVentana()
          {
+            let parametros = `
+            width=${conf.width},
+            height=${conf.height},
+            left=${conf.left},
+            top=${conf.top},
+            resizable=yes, 
+            menubar=no, 
+            toolbar=no, 
+            directories=no, 
+            location=yes, 
+            scrollbars=no, 
+            status=no
+            `
+            // if (ventanaNueva){cerrarVentana()}
+            ventanaNueva && cerrarVentana();
             ventanaNueva = window.open ("texto_de_secundaria_2.htm", "ventana", parametros);
+            conf.tiempo && delay(conf.tiempo).then(function (){cerrarVentana()});
+            conf.texto && ventanaNueva.document.write(conf.texto);
+            conf.color && (ventanaNueva.document.body.style.color = conf.color);
          }
          
          function cerrarVentana()
          {
             ventanaNueva.close();
+            resetConf();
          }
+
+         function coordenadas ()
+         {
+            let coorY = document.getElementById("y").value;
+            let coorX = document.getElementById("x").value;
+            conf.left=coorX;
+            conf.top=coorY;
+         }
+
+         function cambiaColor()
+         {
+            let color = document.getElementById("colores").value;
+            ventanaNueva.document.body.style.backgroundColor = color;
+         }
+         
+         function superBlur()
+         {
+            ventanaNueva.blur();
+         }
+
+         function superFocus()
+         {
+            ventanaNueva.focus();
+         }
+
+         function duracionVentana()
+         {
+            conf.tiempo = document.getElementById("tiempoCerrar").value;
+         }
+
+         function delay(time) 
+         {   
+            return new Promise(resolve => setTimeout(resolve, time));
+         }
+         
+         function cambiarTexto()
+         {
+            conf.texto = document.getElementById("textoVentana").value;
+            ventanaNueva && ventanaNueva.document.write(conf.texto);
+         }
+
+         function resetConf()
+         {
+            conf = {
+               width:"400", 
+               height:"300", 
+               left:"", 
+               top:"", 
+               tiempo: null,
+               texto: null,
+               color: null
+            }
+         }
+
+         function tamaño()
+         {
+            conf.width = document.getElementById("inputWidth");
+            conf.height = document.getElementById("inputHeight");
+            ventanaNueva && abrirVentana();
+         }
+
+         function colorTexto()
+         {
+            conf.color = document.getElementById("colores2").value;
+            ventanaNueva && (ventanaNueva.document.body.style.color = conf.color);
+         }
+
       </script>
       <style>
-         .botonFocus:focus{
-            background-color: red;
-         }
          .botonBlur{
             filter: blur(1px);
          }
@@ -41,7 +130,7 @@
          <div>2.- Escriba las coordenadas para la nueva ventana</div>
          <div>
             <input type="number" placeholder="Coordenada Y" id="y"> <input type="number" placeholder="Coordenada X" id="x">
-            <button id="botonCoordenadas">Aplicar</button>
+            <button onclick="coordenadas()" id="botonCoordenadas">Aplicar</button>
          </div>
       </div>
       <br><br><br>
@@ -53,23 +142,23 @@
                <option value="yellow">Amarillo</option>
                <option value="purple">Morado</option>
             </select>
-            <button id="botonColores">Aplicar</button>
+            <button onclick="cambiaColor()" id="botonColores">Aplicar</button>
          </div>
       </div>
       <br><br><br>
       <div id="divBlurYFocus">
          <div>4.- Botones blur y focus</div>
-         <div><button class="botonBlur">Blur</button> <button class="botonFocus">Focus</button></div>
+         <div><button onclick="superBlur()" class="botonBlur">Blur</button> <button onclick="superFocus()" class="botonFocus">Focus</button></div>
       </div>
       <br><br><br>
       <div>
          <div>5.- Introduce el tiempo que quieres que esté activa la ventana en segundos</div>
-         <div><input type="number" placeholder="Tiempo" id="tiempoCerrar"> <button id="botonTiempo">Aplicar</button></div>
+         <div><input type="number" placeholder="Tiempo" id="tiempoCerrar"> <button onclick="duracionVentana()" id="botonTiempo">Aplicar</button></div>
       </div>
       <br><br><br>
       <div>
          <div>6.- Texto que quieres que aparezca en la ventana</div>
-         <div><input type="text" placeholder="Texto" id="textoVentana"> <button id="botonTiempo">Aplicar</button></div>
+         <div><input type="text" placeholder="Texto" id="textoVentana"> <button onclick="cambiarTexto()" id="botonTiempo">Aplicar</button></div>
       </div>
       <br><br><br>
       <div>
@@ -77,8 +166,8 @@
          <br>
          <div>Tamaño</div>
          <div><input type="number" placeholder="Altura" id="inputHeight"></div>
-         <div><input type="number" placeholder="Anchura" id="inputWeigth"></div>
-         <div><button id="botonTamaño">Aplicar</button></div>
+         <div><input type="number" placeholder="Anchura" id="inputWidth"></div>
+         <div><button onclick="tamaño()" id="botonTamaño">Aplicar</button></div>
          <br>
          <div>Color</div>
          <div>
@@ -87,7 +176,7 @@
                <option value="blue">Azul</option>
                <option value="pink">Rosa</option>
             </select>
-            <div><button id="botonTamaño">Aplicar</button></div>
+            <div><button onclick="colorTexto()" id="botonTamaño">Aplicar</button></div>
          </div>
       </div>
       <br><br><br>
