@@ -10,8 +10,8 @@ function crearCookie ()
         var contador = parseInt(document.cookie.match(/contador=(\d+)/)[1]);
     else
         var contador = 0;
-    
-    return contador;
+
+    document.cookie = "contador="+ contador + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 }
 
 
