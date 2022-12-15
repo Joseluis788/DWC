@@ -25,7 +25,15 @@
         <label>Repite la contraseña</label>
         <br><br>
         <input type="text" id="contraseña2" placeholder="Escribe aqui">
-        <button onclick="abrirVentana2(); numeros()">porro</button>
+        
+        <p id="prueba">dsafa</p>
+        <script>
+            function cambiarContenido ()
+            {
+                document.getElementById("prueba").innerHTML = "FUNCIONA";            
+            }
+        </script>
     </form>
+    <button onclick="cambiarContenido()">porro</button><br>
 </body>
 </html>
