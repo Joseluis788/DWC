@@ -6,8 +6,6 @@ let num = 8;
 function abrirVentana1 ()
 {
     ventana11 = window.open("ventana1.html", "Ventana 1", "width = 300 height = 300");
-    ventana11.document.bgColor = "lightgreen";
-    
 }
 
 function abrirVentana2()
@@ -42,4 +40,9 @@ function cerrarVentana3()
 function numeros ()
 {
     ventana11.document.getElementById("prueba1").innerHTML = num;
+}
+
+function cambiaColor ()
+{
+    ventana11.document.body.style.background = "red";
 }
