@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Hola</title>
+</head>
+<body>
+    <input type="text" placeholder="Introduce un número" id="num">
+    <input type="text" placeholder="Introduce una base" id="base">
+    <button type="button" id="boton">Dale</button>
+
+    <script>
+        var boton = document.getElementById("boton");
+        boton.addEventListener("click", calculo, false);
+
+        function calculo()
+        {
+            var num = document.getElementById("num").value;
+            num = parseInt(num);
+            var base = document.getElementById("base").value;
+
+            var resultado = num.toString(base);
+            alert("El número " + num + " en base " + base + " = " + resultado);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Haz un programa que funcione de la siguiente forma:
+    - El programa nos pide que escribamos dos números positivos menores de 57
+    - El programa nos da como resultado el producto de los dos números
+    - Si los números no son positivos o son mayores de 57, el programa nos lo dice.
+    - El programa nos pregunta al final si queremos volver a empezar.
+    Graba el programa con el nombre 2dawL.htm en TuCarpeta-->
+    <script>
+        var terminar = false;
+        while (terminar == false)
+        {
+        var numero1 = prompt("Introduce un número positivo menor que 57");
+        var numero2 = prompt("Introduce un número positivo menor que 57");
+
+        if (numero1 < 0 | numero1 > 57)
+            alert("El primero número es incorrecto")
+        else if (numero2 < 0 | numero2 > 57)
+            alert("El segundo número es incorrecto")
+        else
+            {
+                var solucion = numero1 * numero2;
+                alert("El resultado de multiplicar " + numero1 + " y " + numero2 + " es " + solucion);
+            }
+        
+        var eleccion = prompt("Si quieres volver a empezar, escribe 1, de lo contrario, escribe 0");
+        if (eleccion == 0)
+            terminar = true;
+        }
+       
+
+    </script>
+</body>
+</html>

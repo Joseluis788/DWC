@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- . Escribe un programa que nos vaya pidiendo números. Si escribimos el número
+    9999 se acaba; por último el programa nos da como resultado el número de
+    números introducidos, exceptuando el 9999.Graba el programa con el nombre
+    2dawM.htm en TuCarpeta.-->
+    <script>
+        
+        var terminar = false;
+        var numero;
+        var contador = 0;
+
+        while (terminar == false)
+        {
+            numero = prompt("Introduce un número, 9999 para acabar");
+
+            if (numero == 9999)
+                terminar = true;
+            else if (numero != "")
+                contador++;
+        }
+
+        alert("Ha escrito un total de " + contador + " numeros");
+
+    </script>
+</body>
+</html>

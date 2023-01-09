@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 45</title>
+</head>
+<body>
+    <script>
+        // Creo los tres arrays
+        let numeros = new Array (10);
+        let menores250 = new Array ();
+        let mayores250 = new Array ();
+
+        // Bucle for para rellenar los arrays
+        for (var i = 0; i < numeros.length; i++)
+        {
+            // Genero un número aleatorio entre 1 y 500
+            let numAleatorio = Math.floor(Math.random() * 500) + 1;
+            numeros[i] = numAleatorio; // Lo introduzco en el array global
+            if (numAleatorio < 250) // Creo un if donde si el número aleatorio es menor que 250 lo añade al array correspondiente
+                menores250.push(numAleatorio);
+            else // En caso contrario, lo añade al array de mayores250
+                mayores250.push(numAleatorio);
+        }
+
+        // Imprimo los arrays
+        document.write("Array con todos los numeros --> " + numeros + "<br>");
+        document.write("Array con los números menores que 250 --> " + menores250 + "<br>");
+        document.write("Array con los números mayores e igual que 250 --> " + mayores250);
+    </script>
+</body>
+</html>

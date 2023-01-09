@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Haz un programa de nombre 2dawI.htm, que has de grabar en TuCarpeta, que
+    funcione de la siguiente forma:
+    - El programa nos pide un número en base ocho
+    - El programa nos lo escribe en base decimal.
+    - Y por último en base 2.
+    Comprueba el programa para el número 65618. Deberás resolver en primer lugar el
+    problema matemáticamente.-->
+    <script>
+
+        var numero = prompt("Introduce un número");
+        var decimal = parseInt(numero, 8).toString(10);
+        var base2 = parseInt(numero, 8).toString(2);
+
+        alert("El número introducido es " + numero + "\nEn base decimal se convierte en: " + decimal + "\nEn base 2 se convierte en: " + base2);
+
+    </script>
+</body>
+</html>

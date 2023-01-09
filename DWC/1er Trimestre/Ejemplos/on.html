@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="id1" onmouseover="agrandar()" onmouseout="pequenio()">Pasa el raton para cambiar la font size</h1>
+
+    <br>
+    <br>
+    
+    <input type="text" id="id2" onblur="agrandar2()">Introduce un texto y verás
+
+    <script>
+
+        function agrandar()
+        {
+            document.getElementById("id1").style.fontSize="80px";
+        }
+
+        function pequenio()
+        {
+            document.getElementById("id1").style.fontSize="40px";
+        }
+
+        function agrandar2()
+        {
+            document.getElementById("id2").style.fontSize="40px";
+        }
+
+    </script>
+</body>
+</html>
