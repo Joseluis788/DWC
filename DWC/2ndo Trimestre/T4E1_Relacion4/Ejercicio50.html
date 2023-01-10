@@ -8,8 +8,10 @@
 </head>
 <body>
     <script>
+        // Declararion de la variable terminar y del array sueldos
         let terminar = false;
         let sueldos = new Array();
+        // Bucle para introducir sueldos hasta que se escriba un 0
         while (terminar == false)
         {
             let sueldo = prompt("Introduce el sueldo del empleado");
@@ -20,9 +22,9 @@
                 sueldos.push(sueldo);
             
         }
-
+        // Ordenación de sueldos por orden de menor a mayor
         sueldos.sort(function(a, b){return a - b});
-
+        // Mostrar los sueldos
         alert("Los sueldos ordenados de mayor a menor son: " + sueldos);
     </script>
 </body>

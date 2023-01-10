@@ -8,21 +8,22 @@
 </head>
 <body>
     <script>
+        // Declaración del array
         let numeros = new Array(10);
-
+        // Bucle para rellenarlo
         for (let i = 0; i < 10; i++)
         {
             numeros[i] = Math.floor(Math.random() * 10) + 1;
         }
-
+        // Filtro para eliminar los doses
         let solucion = numeros.filter(sinDos);
-
+        // Función que elimina los doses
         function sinDos (num)
         {
             if (num != 2)
                 return num; 
         }
-
+        // Mostrar el resultado
         document.write("Array de números sin doses: " + solucion);
     </script>
 </body>

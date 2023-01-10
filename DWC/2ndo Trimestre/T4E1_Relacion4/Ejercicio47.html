@@ -8,19 +8,20 @@
 </head>
 <body>
     <script>
+        // Array de 5 elementos
         let numeros = new Array (5);
-
+        // Bucle para rellenar el array
         for (let i = 0; i < 5; i++)
         {
             numeros[i] = Math.floor(Math.random() * 1000) + 1; 
         }
-
+        // Variables con los 2 últimos números del Array
         let numFinal = numeros[numeros.length-1];
         let numFinal2 = numeros[numeros.length-2];
         let numDefinitivo = numFinal + numFinal2;
-
+        // Eliminación de los dos últimos números del array anterior
         let numerosDefinitivos = numeros.slice(0 , (numeros.length-2))
-
+        // Mostrar 
         document.write("La suma de los dos últimos números es: " + numDefinitivo + "<br>")
         document.write("El vector resultante es: " + numerosDefinitivos);
     </script>

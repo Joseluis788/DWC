@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 52</title>
+</head>
+<body>
+    <script>
+        // Declaración del array y bucle para rellenarlo
+        let elementos = new Array (10);
+        for (let i = 0; i < elementos.length; i++)
+        {
+            elementos[i] = Math.floor(Math.random() * 1000);
+        }
+        // Ordenar el array
+        elementos.sort(function(a, b){return a - b});
+        // Creo otro array a partir del número más pequeño del anterior array y lo relleno de los números que quedan hasta el 1000
+        let final = new Array ();
+        document.write("Array de elementos con números aleatorios: " + elementos + "<br><br>");
+        document.write("Array de todos los números a partir del menor del anterior array:");
+        for (let i = elementos[0]; i <= 1000; i++)
+        {
+            final.push(i);
+            document.write(i + "<br>");
+        }
+        
+        
+    </script>
+</body>
+</html>
