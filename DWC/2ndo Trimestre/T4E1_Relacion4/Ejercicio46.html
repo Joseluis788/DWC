@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 46</title>
+</head>
+<body>
+    <script>
+        let numeros = new Array(1000);
+        let premio = 1000;
+
+        for (let i = 0; i < 10; i++)
+        {
+            let numAleatorio = Math.floor(Math.random() * 1000);
+            numeros[numAleatorio] = premio;
+            premio += 1000;
+            document.write("El número premiado es: " + numAleatorio + " con un premio de " + numeros[numAleatorio] + "€<br>");
+        }
+    </script>
+</body>
+</html>

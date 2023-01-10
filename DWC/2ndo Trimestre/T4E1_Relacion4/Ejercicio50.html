@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 50</title>
+</head>
+<body>
+    <script>
+        let terminar = false;
+        let sueldos = new Array();
+        while (terminar == false)
+        {
+            let sueldo = prompt("Introduce el sueldo del empleado");
+            sueldo = parseInt(sueldo);
+            if (sueldo == 0)
+                terminar = true;
+            else
+                sueldos.push(sueldo);
+            
+        }
+
+        sueldos.sort(function(a, b){return a - b});
+
+        alert("Los sueldos ordenados de mayor a menor son: " + sueldos);
+    </script>
+</body>
+</html>
