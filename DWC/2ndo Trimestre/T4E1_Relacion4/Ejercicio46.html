@@ -15,9 +15,16 @@
         for (let i = 0; i < 10; i++)
         {
             let numAleatorio = Math.floor(Math.random() * 1000);
-            numeros[numAleatorio] = premio;
-            premio += 1000;
-            document.write("El número premiado es: " + numAleatorio + " con un premio de " + numeros[numAleatorio] + "€<br>");
+            if (numeros[numAleatorio] > 0)
+            {
+                i -= 1;
+            }
+            else
+            {
+                numeros[numAleatorio] = premio;
+                premio += 1000;
+                document.write("El número premiado es: " + numAleatorio + " con un premio de " + numeros[numAleatorio] + "€<br>");
+            }
         }
     </script>
 </body>
