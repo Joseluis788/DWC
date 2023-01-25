@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <form action="#">
+        <label for="pegar">¿Te pegan más de 5 veces al día?</label>
+        <br><br>
+        <input type="radio" id="pegar" name="pegar">Si
+        <input type="radio" id="pegar" name="pegar">No
+        <br><br>
+        <label for="llorar">¿Lloras todos los días?</label>
+        <br><br>
+        <input type="radio" id="llorar" name="llorar">Si
+        <input type="radio" id="llorar" name="llorar">No
+        <br><br>
+        <button onclick="recogerParametros()">Enviar</button>
+    </form>
+
+    <script>
+        function recogerParametros() 
+        {
+            let pegar = document.getElementById("pegar").checked;
+            let llorar = document.getElementById("llorar").checked;
+            console.log(pegar);
+            
+
+            if (pegar || llorar )
+            {
+                if (llorar && pegar)
+                {
+                    alert("Estás sufriendo bullying muy grave, pide ayuda");
+                }
+                else
+                {
+                    alert("Estás sufriendo bullying, habla con tus padres sobre ello");
+                }
+            }
+            else
+            {
+                alert("No sufres bullying, estás bien")
+            }
+        }
+    </script>
+</body>
+</html>
