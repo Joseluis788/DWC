@@ -1,0 +1,75 @@
+<html>
+   <head>
+      <title>
+         P&aacute;gina con Javascript.
+      </title>
+      
+   </head>
+   <body onLoad="crearNodos();">
+      <table align="center" width="300" border="2">
+         <tr height="40">
+            <th colspan="3" id="cabecera">
+               Esto es la cabecera de la tabla.
+            </th>
+         </tr>
+         <tr height="50">
+            <td align="center" width="300">
+               Celda 1
+            </td>
+            <td align="center" width="300">
+               Celda 2
+            </td>
+            <td align="center" width="300">
+               Celda 3
+            </td>
+         </tr>
+         <tr height="50">
+            <td align="center">
+               Celda 4
+            </td>
+            <td align="center">
+               Celda 5
+            </td>
+            <td align="center">
+               Celda 6
+            </td>
+         </tr>
+         <tr height="50">
+            <td align="center">
+               Celda 7
+            </td>
+            <td align="center">
+               Celda 8
+            </td>
+            <td align="center">
+               Celda 9
+            </td>
+         </tr>
+      </table>
+
+      <br><br>
+      <input type="button" value="Cambiar cabecera" onclick="cambiarCabecera()">
+      <br>
+      <input type="button" value="Reestablecer" onclick="reestablecerCabecera()">
+
+      <script>
+         // Funcion para cambiar la cabecera
+         function cambiarCabecera ()
+         {
+            // Guardamos el texto a introducir en la variable texto
+            var texto = "Hemos cambiado la cabecera";
+            // Cogemos el th y le ponemos el texto
+            document.getElementsByTagName("th")[0].innerHTML = texto;
+         }
+
+         function reestablecerCabecera ()
+         {
+            // Guardamos el texto a introducir en la variable texto
+            var texto = "Esto es la cabecera de la tabla.";
+            // Cogemos el th y le ponemos el texto
+            document.getElementsByTagName("th")[0].innerHTML = texto;
+         }
+      </script>
+
+   </body>
+</html>
