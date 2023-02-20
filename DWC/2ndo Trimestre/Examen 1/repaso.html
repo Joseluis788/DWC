@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +11,8 @@
             padding: 15px;
             border: 1px solid black;
         }
-        .oculto{
-            visibility: hidden;
-        }
-        .visible{
-            visibility: visible;
+        p{
+            color: red;
         }
     </style>
 </head>
@@ -35,17 +32,17 @@
             <br><br>
             <button type="button" id="enviar" onclick="validarUsuario()">Enviar</button>
             <p id="error"></p>
+            <p id="F"></p>
         </form>
         <br><br><br>
         <p></p>
-        <table class="border border-danger table-primary" id="tabla">
+        <table class="invisible border border-danger table-primary" id="tabla">
             <tr class="border">
                 <td>Nombre</td>
                 <td>Cotraseña</td>
                 <td>Contraseña 2</td>
             </tr>
         </table>
-        <p id="F"></p>
     </div>
 
     <script>
@@ -61,11 +58,17 @@
             if (nombre.value != "usuario" && nombre.value != "admin")
             {
                 document.getElementById("error").innerHTML = "El nombre debe de ser usuario o admin";
+                document.getElementById("F").innerHTML ="";
+                if(tabla.className != "invisible")
+                {
+                    tabla.classList.replace("visible", "invisible");
+                }
             }
             else if (nombre.value == "usuario")
             {
                 document.getElementById("F").innerHTML ="No puedes añadir datos a la tabla porque no eres administrador";
                 document.getElementById("error").innerHTML = "";
+                tabla.classList.replace("visible", "invisible");
             }
             else
             {
@@ -98,7 +101,7 @@
         td2.appendChild(cosas2);
         tr.appendChild(td2);
         tabla.appendChild(tr);
-
+        tabla.classList.replace("invisible", "visible");
         }
 
     </script>
