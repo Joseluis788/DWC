@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        td{
+            padding: 15px;
+            border: 1px solid black;
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-primary">Formulario</h2>
+        <br><br>
+        <form action="#">
+            <label>Nombre: </label>
+            <input type="text" id="nombre">
+            <br><br>
+            <label>Contraseña: </label>
+            <input type="password" id="password1">
+            <br><br>
+            <label>Repite Contraseña: </label>
+            <input type="password" id="password2">
+            <br><br>
+            <button type="button" id="enviar" onclick="validarUsuario()">Enviar</button>
+            <p id="error"></p>
+            <p id="F"></p>
+        </form>
+        <br><br><br>
+        <p></p>
+        <table class="invisible border border-danger table-primary" id="tabla">
+            <tr class="border">
+                <td>Nombre</td>
+                <td>Cotraseña</td>
+                <td>Contraseña 2</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Creación de nodos
+        let nombre = document.getElementById("nombre");
+        let password = document.getElementById("password1");
+        let password2 = document.getElementById("password2");
+
+
+        // Cosas biyin
+        function validarUsuario()
+        {
+            if (nombre.value != "usuario" && nombre.value != "admin")
+            {
+                document.getElementById("error").innerHTML = "El nombre debe de ser usuario o admin";
+                document.getElementById("F").innerHTML ="";
+                if(tabla.className != "invisible")
+                {
+                    tabla.classList.replace("visible", "invisible");
+                }
+            }
+            else if (nombre.value == "usuario")
+            {
+                document.getElementById("F").innerHTML ="No puedes añadir datos a la tabla porque no eres administrador";
+                document.getElementById("error").innerHTML = "";
+                tabla.classList.replace("visible", "invisible");
+            }
+            else
+            {
+                crearTabla();
+                document.getElementById("F").innerHTML ="";
+                document.getElementById("error").innerHTML = "";
+            }
+        }
+
+
+        function crearTabla() 
+        {
+        let tabla = document.getElementById("tabla");
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        let cosas = document.createTextNode(nombre.value);
+
+        td.appendChild(cosas);
+        tr.appendChild(td);
+
+        let td1 = document.createElement("td");
+        let cosas1 = document.createTextNode(password.value);
+
+        td1.appendChild(cosas1);
+        tr.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        let cosas2 = document.createTextNode(password2.value);
+
+        td2.appendChild(cosas2);
+        tr.appendChild(td2);
+        tabla.appendChild(tr);
+        tabla.classList.replace("invisible", "visible");
+        }
+
+    </script>
+</body>
+</html>

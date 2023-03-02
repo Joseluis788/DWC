@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title><style>
+        table{
+            border: 1px solid;
+        }
+        td{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+        Nombre:<input type="text" id="nombre">
+        Apellido<input type="text" id="apellidos">
+        Telefono:<input type="text" id="tlf">
+        gmail:<input type="text" id="email">
+
+        <input type="button" value="Insetar" onclick="Insertar()">
+        <table id="tb1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>tlf</th>
+                <th>gmail</th>
+
+            </tr>
+        </table>
+
+        <script>
+            function Insertar()
+            {
+                var Nombre=document.getElementById("nombre").value;
+                
+                var Apellido=document.getElementById("apellidos").value;
+                var tel=document.getElementById("tlf").value;
+                var gmail=document.getElementById("email").value;
+
+                var tabla =document.getElementById("tb1");
+                    var tr=document.createElement("tr");
+                    var td=document.createElement("td");
+                    var n=document.createTextNode(Nombre);
+
+                    td.appendChild(n);
+                    tr.appendChild(td);
+                    
+                    var td1=document.createElement("td");
+                    var n1=document.createTextNode(Apellido);
+
+                    td1.appendChild(n1);
+                    tr.appendChild(td1);
+                  
+
+                    var td2=document.createElement("td");
+                    var n2=document.createTextNode(tel);
+
+                    td2.appendChild(n2);
+                    tr.appendChild(td2);
+                    
+
+                    var td3=document.createElement("td");
+                    var n3=document.createTextNode(gmail);
+
+                    td3.appendChild(n3);
+                    tr.appendChild(td3);
+                    
+                    tabla.appendChild(tr);
+                    tabla.setAttribute("style", "border:2px solid red");
+            }
+        </script>
+
+</body>
+</html>
