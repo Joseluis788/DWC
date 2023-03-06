@@ -8,7 +8,7 @@
     <title>Pizarra</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="main.js"></script>
+    <script src="pizarra.js"></script>
     <style>
         .pizarra {
             display: grid;
@@ -26,15 +26,12 @@
 <body class="bg-light text-black">
     <!-- Los botones y el título de selección de color -->
     <div class="container d-flex justify-content-center">
-        <div class="p-4 my-5 d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center">
             <h4>Selecciona un color</h4>
             <input type="color" name="color" id="color" class="border">
             <br>
             <div>
                 <button id="pincel" class="btn btn-danger text-black">Desactivar pincel</button>
-
-
-                <button id="limpiar" class="btn btn-info text-black">Limpiar pizarra</button>
             </div>
         </div>
     </div>

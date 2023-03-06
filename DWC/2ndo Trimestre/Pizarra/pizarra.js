@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             btnActivado.setAttribute("class", "btn btn-info");
         } else {
             btnActivado.innerHTML = "Desactivar Pincel";
-            btnActivado.setAttribute("class", "btn btn-danger");
+            btnActivado.setAttribute("class", "btn btn-info");
         }
     })
 
@@ -43,11 +43,4 @@ document.addEventListener("DOMContentLoaded", function () {
         })
 
     }
-
-    // Evento para borrar la pizarra
-    btnLimpiar.addEventListener("click", function () {
-        for (var i = 0; i < huecos.length; i++) {
-            huecos[i].style.backgroundColor = "";
-        }
-    });
 })
